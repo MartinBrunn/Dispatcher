@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">LibXorandoUI</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_list">ListActivity</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_spinnin_wheels">SpinninWheelsActivity</string>
+    <string name="appwidget_text">EXAMPLE</string>
+    <string name="configure">Configure</string>
+    <string name="add_widget">Add widget</string>
+    <string name="number_picker_increment_scroll_mode" msgid="1343063395404990189">" tippen und halten"</string>
+    <!--string name="number_picker_increment_scroll_mode" msgid="1343063395404990189">"<xliff:g id="VALUE">%s</xliff:g> tippen und halten"</string-->
+</resources>

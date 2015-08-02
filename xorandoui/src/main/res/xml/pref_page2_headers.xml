@@ -1,0 +1,20 @@
+<preference-headers xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- These settings headers are only used on tablets. -->
+
+    <header
+        android:id="@+id/pref_general"
+        android:fragment="de.devacon.xorandoui.activity.SettingsActivity$GenericPreferenceFragment"
+        android:title="General 2" />
+
+    <header
+        android:id="@+id/pref_notification"
+        android:fragment="de.devacon.xorandoui.activity.SettingsActivity$GenericPreferenceFragment"
+        android:title="Notifications 2" />
+
+    <header
+        android:id="@+id/pref_datasync"
+        android:fragment="de.devacon.xorandoui.activity.SettingsActivity$GenericPreferenceFragment"
+        android:title="Data Sync 2" />
+
+</preference-headers>

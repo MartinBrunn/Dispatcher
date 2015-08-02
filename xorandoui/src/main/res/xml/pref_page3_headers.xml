@@ -1,0 +1,17 @@
+<preference-headers xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- These settings headers are only used on tablets. -->
+
+    <header
+        android:fragment="de.devacon.xorandoui.activity.SettingsActivity$GeneralPreferenceFragment"
+        android:title="General 3" />
+
+    <header
+        android:fragment="de.devacon.xorandoui.activity.SettingsActivity$NotificationPreferenceFragment"
+        android:title="Notifications 3" />
+
+    <header
+        android:fragment="de.devacon.xorandoui.activity.SettingsActivity$DataSyncPreferenceFragment"
+        android:title="Data Sync 3" />
+
+</preference-headers>

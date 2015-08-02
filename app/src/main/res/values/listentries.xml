@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <array name="listentries">
+        <item type="id">stop</item>
+        <item type="integer">question_round</item>
+        <item type="integer">round_hash</item>
+        <item type="integer">round_minus</item>
+        <item type="integer">blocked</item>
+        <item type="integer">round_klein_plus</item>
+        <item type="integer">round_1</item>
+    </array>
+</resources>

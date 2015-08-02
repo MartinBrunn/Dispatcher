@@ -1,0 +1,11 @@
+<resources>
+    <declare-styleable name="RelLayoutView">
+        <attr name="titleString" format="string" />
+        <attr name="frameWidth" format="dimension" />
+        <attr name="frameColor" format="color|reference" />
+        <attr name="shadeColor" format="color|reference" />
+        <attr name="backgroundIcon" format="color|reference" />
+        <attr name="textColor" />
+        <attr name="textSize" />
+    </declare-styleable>
+</resources>

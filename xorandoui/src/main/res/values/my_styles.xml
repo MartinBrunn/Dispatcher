@@ -1,0 +1,107 @@
+<resources>
+
+
+
+    <style name="AppTextView" parent="@style/MyTextAppearance">
+
+    </style>
+    <style name="AppFonts" parent="@style/MyTextAppearance">
+        <item name="android:textSize">@dimen/HugeText</item>
+    </style>
+    <style name="Colore">
+
+    </style>
+    <style name="AppFonts.Default">
+        <item name="android:typeface">sans</item>
+        <item name="android:textSize">@dimen/HugeText</item>
+    </style>
+    <style name="AppFonts.Huge">
+        <item name="android:textSize">@dimen/HugeText</item>
+        <item name="android:textColor">@color/red</item>
+    </style>
+    <style name="AppFonts.Big">
+        <item name="android:textSize">@dimen/BigText</item>
+    </style>
+    <style name="AppFonts.Medium">
+        <item name="android:textSize">@dimen/MediumText</item>
+    </style>
+    <style name="AppFonts.Small">
+        <item name="android:textSize">@dimen/SmallText</item>
+    </style>
+    <style name="AppFonts.Tiny">
+        <item name="android:textSize">@dimen/TinyText</item>
+    </style>
+
+    <style name="AppFonts.Default.Black">
+        <item name="android:textColor">@color/black</item>
+    </style>
+    <style name="AppFonts.Default.Red">
+        <item name="android:textColor">@color/red</item>
+    </style>
+    <style name="AppFonts.Default.Blue">
+        <item name="android:textColor">@color/blue</item>
+    </style>
+    <style name="AppFonts.Default.Green">
+        <item name="android:textColor">@color/green</item>
+    </style>
+    <style name="AppFonts.Default.Cyan">
+        <item name="android:textColor">@color/cyan</item>
+    </style>
+    <style name="AppFonts.Default.Yellow">
+        <item name="android:textColor">@color/yellow</item>
+    </style>
+    <style name="AppFonts.Default.Magenta">
+        <item name="android:textColor">@color/magenta</item>
+    </style>
+    <style name="AppFonts.Default.White">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="AppFonts.Code">
+        <item name="android:typeface">monospace</item>
+    </style>
+    <style name="AppFonts.Code.Red">
+        <item name="android:textColor">@color/red</item>
+    </style>
+    <style name="AppFonts.Code.Green">
+        <item name="android:textColor">@color/green</item>
+    </style>
+    <style name="AppFonts.Code.Blue">
+        <item name="android:textColor">@color/blue</item>
+    </style>
+    <style name="MyWidget.Holo.ActionBar.TabView" parent="android:Widget.ActionBar.TabView">
+        <item name="android:background">@drawable/tab_indicator_ab_holo</item>
+        <item name="android:paddingStart">16dip</item>
+        <item name="android:paddingEnd">16dip</item>
+    </style>
+    <style name="MyWidget.Holo.ActionBar.TabBar" parent="android:Widget.ActionBar.TabBar">
+        <item name="android:divider">?android:attr/actionBarDivider</item>
+        <item name="android:showDividers">middle</item>
+        <item name="android:dividerPadding">12dip</item>
+    </style>
+
+    <style name="MyWidget.Holo.ActionBar.TabText" parent="android:Widget.ActionBar.TabText">
+        <item name="android:textAppearance">@style/MyTextAppearance.Holo.Medium</item>
+        <item name="android:textColor">?android:attr/textColorPrimary</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:ellipsize">marquee</item>
+        <item name="android:maxLines">2</item>
+    </style>
+    <style name="MyTextAppearance.Holo.Medium" parent="MyTextAppearance.Medium">
+    </style>
+    <style name="MyTextAppearance.Medium">
+        <item name="android:textSize">18sp</item>
+    </style>
+    <style name="MyTextAppearance" parent="android:TextAppearance">
+        <item name="android:textColor">?android:attr/textColorPrimary</item>
+        <item name="android:textColorHighlight">?android:attr/textColorHighlight</item>
+        <item name="android:textColorHint">?android:attr/textColorHint</item>
+        <item name="android:textColorLink">?android:attr/textColorLink</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+
+</resources>

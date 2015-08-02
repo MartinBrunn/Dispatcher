@@ -1,0 +1,12 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:xorando="http://schemas.android.com/apk/res-auto" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <de.devacon.xorandoui.view.RelLayoutView android:background="#ccc" android:layout_width="300dp"
+        android:layout_height="300dp" android:paddingLeft="20dp" android:paddingBottom="40dp"
+        xorando:frameWidth="24sp" xorando:frameColor="#33b5e5"
+        xorando:shadeColor="#33b5e5"
+        xorando:titleString="Hello, RelLayoutView"
+        xorando:backgroundIcon="@android:drawable/ic_menu_add" />
+
+</FrameLayout>

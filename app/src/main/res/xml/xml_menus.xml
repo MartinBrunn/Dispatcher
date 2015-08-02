@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<XMLMenus xmlns:android="http://schemas.android.com/apk/res/android">
+    <Menu android:id="@+id/menu_default" name="default">
+        <Item name="Web" icon="einbahn_falsch" action="startActivity" text="@string/action_web"
+            className="de.devacon.xorandoui.activity.WebActivity"/>
+        <Item name="Settings" icon="settings" action="startActivity"
+            className="de.devacon.xorandoui.activity.SettingsActivity">@string/action_settings</Item>
+        <Item name="Master" icon="ampersand_transparent" action="startActivity"
+            className="de.devacon.xorandoui.activity.DetailListActivity">@string/action_master</Item>
+        <Item name="Drawer" icon="bahn" action="startActivity"
+            className="de.devacon.xorandoui.activity.DrawerActivity">@string/action_drawer</Item>
+        <Item name="Spinner" icon="u_bahn" action="startActivity"
+            className="de.devacon.xorandoui.activity.SpinnerActivity">@string/action_spinner</Item>
+        <Item name="Swiped" icon="s_bahn" action="startActivity"
+            className="de.devacon.xorandoui.activity.SwipedActivity">@string/action_swiped</Item>
+        <Item name="Tabbed" icon="digit_1" action="startActivity"
+            className="de.devacon.xorandoui.activity.TabbedActivity">@string/action_tabbed</Item>
+        <Item name="Blank" icon="stop" action="startActivity" text="@string/action_blank"
+            className="de.devacon.xorandoui.activity.BlankActivity"></Item>
+        <Item name="List" icon="exclamation" action="startActivity" text="List"
+            className="de.devacon.xorandoui.activity.ListActivity"></Item>
+        <Item name="Grid" icon="question_round" action="startActivity" text="Grid"
+            className="de.devacon.xorandoui.activity.GridActivity"></Item>
+        <Item name="SpinningWheels" icon="euro" action="startActivity" text="@string/action_blank"
+            className="de.devacon.xorandoui.activity.SpinninWheelsActivity"></Item>
+        <Item name="MoveIcons" icon="basicround_gross_at" action="startActivity" text="@string/action_blank"
+            className="de.devacon.xorandoui.activity.MoveIconsActivity"></Item>
+        <Item name="Test" icon="basicround_gross_dollar" action="startActivity" text="@string/action_blank"
+            className="de.devacon.xorandoui.activity.TestFragmentActivity"><Parameter fragment="test_fragment"></Parameter></Item>
+        <Item name="Test2" icon="basicround_gross_paragraph" action="startActivity" text="@string/action_blank"
+            className="de.devacon.xorandoui.activity.TestFragmentActivity"><Parameter fragment="test1_fragment"></Parameter></Item>
+        <Item name="Blank" icon="basicround_gross_prozent" action="startActivity" text="@string/action_blank"
+            className="de.devacon.xorandoui.activity.BlankActivity">
+        </Item>
+    </Menu>
+</XMLMenus>

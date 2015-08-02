@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="pref_example_list_values2">
+        <item type="string">List Value 1</item>
+        <item type="string">List Value 2</item>
+        <item type="string">List Value 3</item>
+        <item type="string">List Value 4</item>
+        <item type="string">List Value 5</item>
+        <item type="string">List Value 6</item>
+        <item type="string">List Value 7</item>
+        <item type="string">List Value 8</item>
+        <item type="string">List Value 9</item>
+        <item type="string">List Value 10</item>
+    </array>
+    <array name="pref_example_list_titles2">
+        <item type="string">Title 1</item>
+        <item type="string">Title 2</item>
+        <item type="string">Title 3</item>
+        <item type="string">Title 4</item>
+        <item type="string">Title 5</item>
+        <item type="string">Title 6</item>
+        <item type="string">Title 7</item>
+        <item type="string">Title 8</item>
+        <item type="string">Title 9</item>
+        <item type="string">Title 10</item>
+    </array>
+</resources>

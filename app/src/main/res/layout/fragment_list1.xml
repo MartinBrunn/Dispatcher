@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView android:id="@+id/question"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:src="@drawable/question_round"/>
+        <ImageView android:id="@+id/exclamation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:src="@drawable/exclamation"/>
+        <ImageView android:id="@+id/info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:src="@drawable/info"/>
+        <ImageView android:id="@+id/blocked"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:src="@drawable/blocked"/>
+        <ImageView android:id="@+id/stop"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:src="@drawable/stop"/>
+        <ImageView android:id="@+id/trafficred"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:src="@drawable/traffic_red"/>
+        <ImageView android:id="@+id/trafficgreen"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:src="@drawable/traffic_green"/>
+        <ImageView android:id="@+id/trafficyellowred"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:src="@drawable/traffic_redyellow"/>
+        <ImageView android:id="@+id/trafficyellow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:src="@drawable/traffic_yellow"/>
+        <ImageView android:id="@+id/trafficoff"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:src="@drawable/traffic_off"/>
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:src="@drawable/stop"/>
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:src="@drawable/round_klein_a"/>
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:src="@drawable/round_and"/>
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:src="@drawable/round_b"/>
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:src="@drawable/round_c"/>
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:src="@drawable/round_fragenot"/>
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:src="@drawable/round_gabelung_horiz"/>
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:src="@drawable/round_gabelung_horiz_end"/>
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:src="@drawable/round_gabelung_vertical"/>
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:src="@drawable/round_gabelung_vertical_end"/>
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:src="@drawable/round_groesser"/>
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:src="@drawable/round_gross_m"/>
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:src="@drawable/round_hash"/>
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:src="@drawable/round_klein_plus"/>
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:src="@drawable/round_klein_stern"/>
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:src="@drawable/round_kleiner"/>
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:src="@drawable/round_minus"/>
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:src="@drawable/bahn"/>
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:src="@drawable/s_bahn"/>
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:src="@drawable/u_bahn"/>
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:src="@drawable/settings"/>
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:src="@drawable/shift_left"/>
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:src="@drawable/shift_right"/>
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:src="@drawable/round_1"/>
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:src="@drawable/round_2"/>
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:src="@drawable/round_3"/>
+
+    </ListView>
+
+</LinearLayout>

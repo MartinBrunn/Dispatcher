@@ -1,0 +1,22 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" tools:context=".DispatchActivity">
+    <item android:id="@+id/action_settings" android:title="@string/action_settings"
+        android:orderInCategory="100" android:showAsAction="never" />
+    <item android:id="@+id/action_blank" android:title="@string/action_blank"
+        android:orderInCategory="100" android:showAsAction="never" />
+    <item android:id="@+id/action_master" android:title="@string/action_master"
+        android:orderInCategory="100" android:showAsAction="never" />
+    <item android:id="@+id/action_drawer" android:title="@string/action_drawer"
+        android:orderInCategory="100" android:showAsAction="never" />
+    <item android:id="@+id/action_login" android:title="@string/action_login"
+        android:orderInCategory="100" android:showAsAction="never" />
+    <item android:id="@+id/action_spinner" android:title="@string/action_spinner"
+        android:orderInCategory="100" android:showAsAction="never" />
+    <item android:id="@+id/action_swiped" android:title="@string/action_swiped"
+        android:orderInCategory="100" android:showAsAction="never" />
+    <item android:id="@+id/action_tabbed" android:title="@string/action_tabbed"
+        android:orderInCategory="100" android:showAsAction="never" />
+    <item android:id="@+id/action_other" android:title="@string/action_other"
+        android:orderInCategory="100" android:showAsAction="never" />
+
+</menu>

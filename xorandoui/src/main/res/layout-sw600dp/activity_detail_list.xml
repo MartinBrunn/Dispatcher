@@ -1,0 +1,22 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:layout_marginLeft="16dp"
+    android:layout_marginRight="16dp" android:baselineAligned="false"
+    android:divider="?android:attr/dividerHorizontal" android:orientation="horizontal"
+    android:showDividers="middle" tools:context="de.devacon.xorandoui.activity.DetailListActivity">
+
+    <!--
+    This layout is a two-pane layout for the Details
+    master/detail flow.
+    
+    -->
+
+    <fragment android:id="@+id/detail_list"
+        android:name="de.devacon.xorandoui.fragment.DetailListFragment" android:layout_width="0dp"
+        android:layout_height="match_parent" android:layout_weight="1"
+        tools:layout="@android:layout/list_content" />
+
+    <FrameLayout android:id="@+id/detail_detail_container" android:layout_width="0dp"
+        android:layout_height="match_parent" android:layout_weight="3" />
+
+</LinearLayout>

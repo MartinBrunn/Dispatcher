@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Despair</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="action_blank">Blank</string>
+    <string name="action_master">Master Detail</string>
+    <string name="action_drawer">Drawer</string>
+    <string name="action_spinner">Spinner</string>
+    <string name="action_tabbed">Tabbed</string>
+    <string name="action_swiped">Swiper</string>
+    <string name="action_login">Blank</string>
+    <string name="action_web">Web Action</string>
+    <string name="action_other">Other ...</string>
+    <string name="app2_name">Desparado</string>
+</resources>

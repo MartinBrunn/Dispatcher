@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="AppTheme" parent="AppCompatTheme">
+        <item name="android:textColor">@color/blue</item>
+    </style>
+    <style name="AppCompatTheme" parent="XorandoTheme">
+    </style>
+    <style name="XorandoTheme" >
+
+        <item name="android:textAppearance">@style/TextAppearance</item>
+        <item name="android:colorBackground">@android:color/background_dark</item>
+        <item name="android:colorBackgroundCacheHint">?android:attr/colorBackground</item>
+    </style>
+</resources>
