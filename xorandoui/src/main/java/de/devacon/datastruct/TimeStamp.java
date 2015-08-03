@@ -22,12 +22,12 @@ public class TimeStamp {
         this.precision = precision;
         this.timeInMilliSeconds = timeInMilliSeconds;
         Date date = new Date(timeInMilliSeconds);
-        String year = Integer.toString(date.getYear());
-        String month = String.format("%04.2d", date.getMonth());
-        String day = String.format("%02.2d", date.getDay());
-        String hour = String.format("%02.2d", date.getHours());
-        String min = String.format("%02.2d", date.getMinutes());
-        String sec = String.format("%02.2d", date.getSeconds());
+        String year = String.format("%4d",date.getYear());
+        String month = String.format("%2d", date.getMonth());
+        String day = String.format("%2d", date.getDay());
+        String hour = String.format("%2d", date.getHours());
+        String min = String.format("%2d", date.getMinutes());
+        String sec = String.format("%2d", date.getSeconds());
         timestamp = year + month + day ;
         if(precision > DAYS)
             timestamp += hour ;
@@ -40,12 +40,12 @@ public class TimeStamp {
             timestamp += "_" ;
         if(precision == DECI) {
 
-            timestamp += String.format("%01.1d", (timeInMilliSeconds % 1000) / 100);
+            timestamp += String.format("%1d", (timeInMilliSeconds % 1000) / 100);
         }
         if(precision == CENTI)
-            timestamp += String.format("%02.2d",(timeInMilliSeconds%1000)/10);
+            timestamp += String.format("%2d",(timeInMilliSeconds%1000)/10);
         if(precision == MILLI)
-            timestamp += String.format("%03.3d",(timeInMilliSeconds%1000));
+            timestamp += String.format("%3d",(timeInMilliSeconds%1000));
 
     }
     public String toString() {

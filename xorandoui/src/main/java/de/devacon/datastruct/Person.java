@@ -9,14 +9,14 @@ import java.io.Serializable;
  * Created by @Martin@ on 01.08.2015 06:40.
  */
 public class Person implements Serializable {
-    enum Gender {
+    public enum Gender {
         UNKNOWN ,
         MALE ,
         FEMALE,
     }
     public String firstName = "";
     public String lastName = "";
-    Gender gender = Gender.UNKNOWN;
+    public Gender gender = Gender.UNKNOWN;
 
     public Person() {
     }
