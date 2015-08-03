@@ -13,8 +13,12 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import de.devacon.datastruct.PersonSymbolic;
@@ -28,11 +32,12 @@ import de.devacon.datastruct.PersonSymbolic;
  * Use the {@link PersonListFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class PersonListFragment extends Fragment implements View.OnClickListener, AdapterView.OnItemClickListener {
+public class PersonListFragment extends Fragment implements View.OnClickListener, AdapterView.OnItemClickListener, PersonDialogFragment.OnPersonDataChangedListener {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+
+    private static final String ARG_PERSONNAME = "personname";
+    private static final String ARG_SAVED = "saved";
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -40,7 +45,34 @@ public class PersonListFragment extends Fragment implements View.OnClickListener
     private String name = "rot";
     private OnFragmentInteractionListener mListener;
     private OnPersonChangedListener listener = null;
+    private OnPersonListChangedListener listListener = null;
     private ListView list = null;
+    private PersonSymbolic activePerson = null;
+    private ArrayList<PersonSymbolic> persons = null;
+    private OnAdminStateChangedListener onAdminStateChangedListener = null;
+    private ImageButton personImage = null;
+    private int position = 0;
+    private View view = null;
+
+    @Override
+    public void onPersonDataChangedListener(PersonSymbolic person) {
+        activePerson = person;
+        if(position <= persons.size()) {
+            persons.set(position,activePerson);
+            list.setAdapter(new PersonAdapter(getActivity().getApplicationContext(),
+                    R.layout.person_list, persons));
+            savePersons();
+            listListener.onPersonListChanged(persons);
+        }
+
+    }
+
+    private void savePersons() {
+        getArguments().putSerializable(ARG_SAVED,persons);
+    }
+    interface OnPersonListChangedListener {
+        void onPersonListChanged(ArrayList<PersonSymbolic> personList);
+    }
     interface OnPersonChangedListener {
         void onPersonChanged(PersonSymbolic newPerson);
     }
@@ -60,25 +92,42 @@ public class PersonListFragment extends Fragment implements View.OnClickListener
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         if(parent instanceof ListView) {
-            if(((ListView)parent).isItemChecked(position)) {
-                view.setBackgroundColor(Color.rgb(0x7f,0x7f,0xFF));
-                /*
-                SparseBooleanArray ar = ((ListView)parent).getCheckedItemPositions();
-
-                if(ar == null) {
-                    return;
-                }
-                for(int i = 0 ; i < persons.size();i++) {
-
-                    if(positions.get(i)) {
-                        queue.add(array.get(i));
-                    }
-                }*/
-
+            this.position = position;
+            activePerson = persons.get(position);
+            for(int i = 0 ; i < persons.size() ; ++i) {
+                if (((ListView) parent).isItemChecked(i)) {
+                    view.setBackgroundColor(Color.rgb(0x7f, 0x7f, 0xFF));
+                } else
+                    view.setBackgroundColor(parent.getDrawingCacheBackgroundColor());
             }
-            else
-                view.setBackgroundColor(parent.getDrawingCacheBackgroundColor());
+            listener.onPersonChanged(activePerson);
+            personImage.setImageResource(activePerson.resIcon);
+
         }
+    }
+
+    /**
+     * Called when the Fragment is no longer resumed.  This is generally
+     * tied to {@link Activity#onPause() Activity.onPause} of the containing
+     * Activity's lifecycle.
+     */
+    @Override
+    public void onPause() {
+        view.setVisibility(View.INVISIBLE);
+        super.onPause();
+    }
+
+    /**
+     * Called when the fragment is visible to the user and actively running.
+     * This is generally
+     * tied to {@link Activity#onResume() Activity.onResume} of the containing
+     * Activity's lifecycle.
+     */
+    @Override
+    public void onResume() {
+        view.setVisibility(View.VISIBLE);
+
+        super.onResume();
     }
 
     class PersonAdapter extends ArrayAdapter<PersonSymbolic> {
@@ -94,6 +143,34 @@ public class PersonListFragment extends Fragment implements View.OnClickListener
         public PersonAdapter(Context context, int resource, List<PersonSymbolic> objects) {
             super(context, resource, objects);
         }
+        /**
+         * {@inheritDoc}
+         *
+         * @param position
+         * @param convertView
+         * @param parent
+         */
+        @Override
+        public View getView(int position, View convertView, ViewGroup parent) {
+
+
+            if(convertView == null) {
+                RelativeLayout view = (RelativeLayout)getActivity().getLayoutInflater().inflate(R.layout.person_list, parent, false);
+                convertView = view;
+            }
+            ((ImageView) convertView.findViewById(R.id.imageView)).setImageResource(
+                    persons.get(position).resIcon);
+            ((TextView) convertView.findViewById(R.id.textView)).setText(
+                    persons.get(position).toString());
+
+            return convertView;
+        }
+
+        @Override
+        public boolean areAllItemsEnabled() {
+            return true ; //super.areAllItemsEnabled();
+        }
+
     }
     /**
      * Use this factory method to create a new instance of
@@ -103,12 +180,13 @@ public class PersonListFragment extends Fragment implements View.OnClickListener
      * @param param2 Parameter 2.
      * @return A new instance of fragment PersonListFragment.
      */
-    // TODO: Rename and change types and number of parameters
-    public static PersonListFragment newInstance(String param1, String param2) {
+
+    public static PersonListFragment newInstance(String person,ArrayList saved) {
         PersonListFragment fragment = new PersonListFragment();
         Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
+        args.putString(ARG_PERSONNAME, person);
+        args.putSerializable(ARG_SAVED, saved);
+
         fragment.setArguments(args);
         return fragment;
     }
@@ -120,9 +198,17 @@ public class PersonListFragment extends Fragment implements View.OnClickListener
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
+            String person = getArguments().getString(ARG_PERSONNAME);
+            persons = (ArrayList)getArguments().getSerializable(ARG_SAVED);
+            for(int i = 0 ; i < persons.size();++i) {
+                if(persons.get(i).name.equals(person)) {
+                    activePerson = persons.get(i);
+                    position = i ;
+                    break ;
+                }
+            }
         }
     }
 
@@ -130,20 +216,25 @@ public class PersonListFragment extends Fragment implements View.OnClickListener
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_person_list, container, false);
+        view = inflater.inflate(R.layout.fragment_person_list, container, false);
         try {
-            ((ImageButton) view.findViewById(R.id.playSelected)).setOnClickListener(this);
-            ((ImageButton) view.findViewById(R.id.deleteSelected)).setOnClickListener(this);
+            ((ImageButton) view.findViewById(R.id.personSelected)).setOnClickListener(this);
+
             list = (ListView)view.findViewById(R.id.listview);
-            SharedPreferences pref = getActivity().getSharedPreferences("Plauderei-Persons",Activity.MODE_MULTI_PROCESS);
-            if(pref != null)
-                name = pref.getString("name","rot");
+            name = activePerson.name;
             list.setOnItemClickListener(this);
+            list.setAdapter(new PersonAdapter(getActivity().getApplicationContext(),
+                    R.layout.person_list, persons));
+            list.setVisibility(View.VISIBLE);
+            personImage = (ImageButton)view.findViewById(R.id.personSelected);
+            personImage.setVisibility(View.VISIBLE);
+            personImage.setImageResource(activePerson.resIcon);
+
         }
         catch(Throwable all) {
             all.printStackTrace();
         }
-
+        view.setVisibility(View.VISIBLE);
         return view;
     }
 
@@ -157,12 +248,6 @@ public class PersonListFragment extends Fragment implements View.OnClickListener
     @Override
     public void onAttach(Activity activity) {
         super.onAttach(activity);
-        try {
-            mListener = (OnFragmentInteractionListener) activity;
-        } catch (ClassCastException e) {
-            throw new ClassCastException(activity.toString()
-                    + " must implement OnFragmentInteractionListener");
-        }
     }
 
     @Override
@@ -182,14 +267,17 @@ public class PersonListFragment extends Fragment implements View.OnClickListener
             case R.id.deleteSelected:
                 deleteSelected();
                 break;
-            case R.id.playSelected:
-                playSelected();
+            case R.id.personSelected:
+                PersonDialogFragment fragment = PersonDialogFragment.newInstance(activePerson);
+                fragment.setOnPersonDataChangedListener(this);
+
+                getFragmentManager().beginTransaction().
+                        replace(android.R.id.content, fragment).addToBackStack("TAG").commit();
+                if(onAdminStateChangedListener != null) {
+                    onAdminStateChangedListener.onAdminStateChanged(AdminActivity.AdminState.DIALOG);
+                }
                 break;
         }
-    }
-
-    private void playSelected() {
-
     }
 
     private void deleteSelected() {
@@ -212,5 +300,11 @@ public class PersonListFragment extends Fragment implements View.OnClickListener
     }
     public void setOnPersonChangedListener(OnPersonChangedListener listener) {
         this.listener = listener;
+    }
+    public void setOnAdminStateChangedListener(OnAdminStateChangedListener listener) {
+        this.onAdminStateChangedListener = listener;
+    }
+    public void setOnPersonListChangedListener(OnPersonListChangedListener listener) {
+        this.listListener = listener;
     }
 }

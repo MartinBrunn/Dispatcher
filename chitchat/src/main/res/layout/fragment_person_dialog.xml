@@ -1,35 +1,41 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:id="@+id/persondialog"
+    android:tag="PersonDialog"
     android:layout_height="match_parent"
     tools:context="de.devacon.xorando.chitchat.PersonDialogFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView android:layout_width="match_parent" android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
-    <LinearLayout android:id="@+id/personDialog"
+     <LinearLayout android:id="@+id/personDialog"
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
         <EditText android:id="@+id/firstName"
             android:layout_width="match_parent"
             android:layout_height="40dp"
+            android:editable="true"
             android:hint="Vorname"/>
 
         <EditText android:id="@+id/lastName"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:hint="Familienname"/>
-        <RadioButton android:id="@+id/male"
+        <RadioGroup android:id="@+id/gender"
+            android:addStatesFromChildren="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+        <android:RadioButton android:id="@+id/male"
+            android:textColor="@color/black"
             android:layout_width="match_parent"
-            android:text="männlich"
+            android:text="maennlich"
             android:layout_height="40dp" />
-        <RadioButton android:id="@+id/female"
+        <android:RadioButton android:id="@+id/female"
             android:layout_width="match_parent"
             android:text="weiblich"
             android:layout_height="40dp" />
-        <Button android:id="@+id/OK"
+        </RadioGroup>
+        <Button android:id="@+id/ok"
             android:layout_width="wrap_content"
-            android:text="Speichern"
+            android:text="@string/save"
             android:layout_height="40dp" />
 
     </LinearLayout>

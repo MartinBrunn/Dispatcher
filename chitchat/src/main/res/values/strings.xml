@@ -5,4 +5,10 @@
 
 <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="delete">Löschen</string>
+    <string name="save">Übernehmen</string>
+
+    <string name="title_activity_chit_chat">Plauderer</string>
+    <string name="dummy_button">Plauderknopf</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
 </resources>

@@ -52,8 +52,10 @@ public class Player implements View.OnClickListener,
             name = "D_" + Long.toString(System.currentTimeMillis());
         }
         else {
-            TimeStamp time = new TimeStamp(System.currentTimeMillis(),TimeStamp.DECI);
-            name = "F_" + time.toString();
+            //TimeStamp time = new TimeStamp(System.currentTimeMillis(),TimeStamp.DECI);
+            Long l = System.currentTimeMillis();
+            name = "F_" + String.format("%tY%tm%td_%tH%tM%tS_%tL",l,l,l,l,l,l,l);
+                    //time.toString();
         }
         recorder = new MediaRecorder();
         recorder.setOnErrorListener(this);
@@ -81,7 +83,6 @@ public class Player implements View.OnClickListener,
             recorder = null;
             return;
         }*/
-        isRecording = true;
 
         try {
             recorder.setOutputFormat(MediaRecorder.OutputFormat.THREE_GPP);
@@ -94,22 +95,26 @@ public class Player implements View.OnClickListener,
 
         recorder.setAudioEncoder(MediaRecorder.AudioEncoder.AMR_NB);
         dir.mkdirs();
-        File file = new File(dir,Long.toString(System.currentTimeMillis())+ ".3gp");
+        File file = new File(dir,name + ".3gp");
         recorder.setOutputFile(file.getAbsolutePath());
         try {
             recorder.prepare();
             recorder.start();
+            isRecording = true;
         } catch (IOException e) {
             e.printStackTrace();
         }
-        if(listener != null) {
+        if(isRecording && listener != null) {
             listener.onRecordStateChangedListener(RecordState.RECORDING);
         }
 
 
     }
     public void stop() {
-        recorder.stop();
+        if(recorder == null)
+            return;
+        if(isRecording)
+            recorder.stop();
         recorder.release();
         recorder = null;
         isRecording = false;
